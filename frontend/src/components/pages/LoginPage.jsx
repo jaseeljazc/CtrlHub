@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { loginUser } from "../../redux/slices/authSlice";
-import "./loginPage.css"; // keep this for your custom styles like .login-card, .custom-input, etc.
+import "./LoginPage.css"; // keep this for your custom styles like .login-card, .custom-input, etc.
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 
