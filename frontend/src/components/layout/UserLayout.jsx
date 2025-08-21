@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Navbar from '../commen/Navbar';
-import Footer from '../commen/footer';
+import Footer from '../commen/Footer';
 import { Outlet } from 'react-router-dom';
 
 const UserLayout = () => {
