@@ -20,17 +20,18 @@ const LoginPage = () => {
   const redirect = new URLSearchParams(location.search).get("redirect") || "/"
   const isCheckoutRedirect = redirect.includes("checkout")
 
-  useEffect(()=>{
-    if (user){
-      if (cart?.products.length >0 && guestId ){
-        dispatch(mergeCart({ guestId, user })).then(()=>{
-          navigate(isCheckoutRedirect ? "/checkout" : "/")
-        })
-      } else {
-        navigate(isCheckoutRedirect ? "/checkout" : "/")
-      }
+useEffect(() => {
+  if (user) {
+    if (cart?.products?.length > 0 && guestId) {
+      dispatch(mergeCart({ guestId, user })).then(() => {
+        navigate(isCheckoutRedirect ? "/checkout" : "/");
+      });
+    } else {
+      navigate(isCheckoutRedirect ? "/checkout" : "/");
     }
-  },[user, guestId, cart, navigate, isCheckoutRedirect, dispatch])
+  }
+}, [user, guestId, cart, navigate, isCheckoutRedirect, dispatch]);
+
 
   const handleSubmit = (e) => {
     e.preventDefault();

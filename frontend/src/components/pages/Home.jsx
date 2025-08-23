@@ -29,7 +29,7 @@ useEffect(()=>{
       <Hero />
       {/* <Gadgets/> */}
       <div className="container  text-center mt-15 mb-7 relative ">
-        <h2 className="text-3xl font-bold text-white">New Items</h2>
+        <h2 className="text-3xl font-bold mygreen">New Items</h2>
       </div>
       <NewItems />
 

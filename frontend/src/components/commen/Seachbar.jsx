@@ -25,15 +25,15 @@ const Seachbar = () => {
       <div>
         <form
           onSubmit={handleSearch}
-          className="relative flex items-center justify-center w-full "
+          className="relative flex items-center justify-center w-full  "
         >
-          <div className="relative  w-3/4 ml-4">
+          <div className="relative  ml-4">
             <input
               type="text"
               placeholder="Search"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="bg-gray-300 h-70px px-4 border-2 border-lime-500 py-2 pr-12 text-black rounded-[10px] focus:outline-none
+              className="bg-gray-200 h-70px px-4 border-2 border-lime-500 py-1 sm:py-2 pr-12 text-black rounded-[10px] focus:outline-none
                 w-full placeholder:text-black-700"
             />
             <button

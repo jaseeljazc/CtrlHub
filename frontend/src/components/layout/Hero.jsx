@@ -19,10 +19,10 @@ const Hero = () => {
         <div className="text-center text--500 pb-0 lg:pb-30 p-6 ">
           {/* <h6 className="md:text-3xl font-bold sm:text-3xl">WELCOME TO </h6> */}
           <h1
-            className="text-6xl sm:text-3xl md:text-7xl lg:text-9xl font-bold tracking-tighter
-            uppercase mb-4 animate-gradient-text drop-shadow-lg"
+            className="text-5xl sm:text-3xl md:text-6xl lg:text-8xl font-bold tracking-tighter
+            uppercase mb-4 animate-gradient-text drop-shadow-lg "
           >
-            CTRLHUB <br /> 
+            Build Your Arena <br /> 
           </h1>
           
 
@@ -32,8 +32,8 @@ const Hero = () => {
           <Link
             to="#"
             className="bg-gray-
-             hover:text-lime-500 hover:bg-transparent  border border-lime-500 rounded-[-7px] p-3
-            text-lg bg-lime-500 text-gray-950 transform transition-colors duration-300 ease-in-out "
+             hover:text-[#00ff00] hover:bg-transparent  border border-[#00ff00] rounded-[-7px] p-3
+            text-lg bg-[#00ff00] text-gray-950 transform transition-colors duration-300 ease-in-out "
           >
             Shop Now
           </Link>

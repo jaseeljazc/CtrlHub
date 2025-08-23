@@ -49,6 +49,8 @@
     #ff00ff,  /* Neon Pink */
     #ff69b4,  /* Pink */
     #00ffff,  /* Cyan */
+    #1e90ff,  /* Blue */
+
     #4b0082   /* Indigo */
   );
   background-size: 1600% 1600%; /* larger for smoother flow */
@@ -77,3 +79,7 @@
   text-transform: uppercase;
 }
 */
+
+.mygreen{
+  color:#00FF00;
+}

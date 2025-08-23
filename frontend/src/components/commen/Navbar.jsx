@@ -33,96 +33,96 @@ const Navbar = () => {
     <>
       {/* <div className="pt-4 md:block hidden"> <Seachbar /></div> */}
       <nav
-        className="container mx-auto flex items-center justify-between
-    pt-5 pb-3 px-10"
+        className="overflow-x-hidden container mx-auto flex items-center justify-around
+    md:pt-2 md:pb-3 px-1"
       >
-       
-        <div className=" md:mt-0 md:pt-0 pt-4 md:pl-5 ">
-          <Link to="/" className="text-4xl animate-gradient-text keycap-font font-black">
+        <div
+          className="
+         md:pt-0 pt-2 sm:pt-4 md:pl-5 md:mt-5"
+        >
+          <Link
+            to="/"
+            className="text-2xl md:text-3xl animate-gradient-text keycap-font font-black "
+          >
             Ctrlhub
           </Link>
         </div>
 
-        <div className=" md:block hidden w-100">
+        <div className="pt-4 hidden sm:block sm:pb-2 md:pb-0">
           {" "}
           <Seachbar />
         </div>
-        <div className="pt-4 md:hidden">
-          {" "}
-          <Seachbar />
-        </div>
+
         {/* navlinks */}
- 
 
-        <div className="hidden md:flex space-x-10 ml-5">
-  <NavLink
-    to="/"
-    className={({ isActive }) =>
-      `relative inline-block after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:bg-green-500 after:transition-all after:duration-300 
+        <div className="hidden md:flex space-x-10 ml-5 mt-5">
+          <NavLink
+            to="/"
+            className={({ isActive }) =>
+              `relative inline-block after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:bg-green-500 after:transition-all after:duration-300 
       ${
         isActive
           ? "after:w-full text-gray-200"
           : "after:w-0 text-white-700 hover:text-gray hover:after:w-full"
       } 
-      text-sm font-medium uppercase`
-    }
-  >
-    Home
-  </NavLink>
+       font-medium `
+            }
+          >
+            Home
+          </NavLink>
 
-  <NavLink
-    to="/collections/all"
-    className={({ isActive }) =>
-      `relative inline-block after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:bg-green-500 after:transition-all after:duration-300 
+          <NavLink
+            to="/collections/all"
+            className={({ isActive }) =>
+              `relative inline-block after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:bg-green-500 after:transition-all after:duration-300 
       ${
         isActive
           ? "after:w-full text-gray-200"
           : "after:w-0 text-white-700 hover:text-gray hover:after:w-full"
       } 
-      text-sm font-medium uppercase`
-    }
-  >
-    Category
-  </NavLink>
+       font-medium `
+            }
+          >
+            Category
+          </NavLink>
 
-  <NavLink
-    to="/about"
-    className={({ isActive }) =>
-      `relative inline-block after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:bg-green-500 after:transition-all after:duration-300 
+          <NavLink
+            to="/about"
+            className={({ isActive }) =>
+              `relative inline-block after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:bg-green-500 after:transition-all after:duration-300 
       ${
         isActive
           ? "after:w-full text-gray-200"
           : "after:w-0 text-white-700 hover:text-gray hover:after:w-full"
       } 
-      text-sm font-medium uppercase`
-    }
-  >
-    About
-  </NavLink>
+       font-medium `
+            }
+          >
+            About
+          </NavLink>
 
-  <NavLink
-    to="/support"
-    className={({ isActive }) =>
-      `relative inline-block after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:bg-green-500 after:transition-all after:duration-300 
+          <NavLink
+            to="/support"
+            className={({ isActive }) =>
+              `relative inline-block after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:bg-green-500 after:transition-all after:duration-300 
       ${
         isActive
           ? "after:w-full text-gray-200"
           : "after:w-0 text-white-700 hover:text-gray hover:after:w-full"
       } 
-      text-sm font-medium uppercase`
-    }
-  >
-    Support
-  </NavLink>
-</div>
-
+       font-medium `
+            }
+          >
+            Support
+          </NavLink>
+        </div>
 
         {/* nav icons */}
-        <div className="flex items-center space-x-5 pt-5 md:pt-0">
+        <div className="flex items-center space-x-3 md:space-x-5 md:ml-5 pt-2 md:pt-0 md:mt-5 md:mr-0 ">
           {user && user.role === "admin" && (
             <Link
               to="/admin"
-              className="block bg-white px-2 rounded text-sm text-black"
+              className="block bg-white px-2 rounded  text-black"
             >
               Admin
             </Link>
@@ -132,7 +132,7 @@ const Navbar = () => {
             onClick={toggleCartDrawer}
             className="relative hover:text-gray-400"
           >
-            <IoMdCart className="h-8 w-8 text-white-700" />
+            <IoMdCart className="h-7 md:h-8 w-7 md:w-8 text-[#00ff00]" />
             {cartItemCount > 0 && (
               <span className="absolute -top-1 bg-red-800 text-shadow-white text-xs rounded-full px-1 py-0.">
                 {cartItemCount}
@@ -140,21 +140,21 @@ const Navbar = () => {
             )}
           </button>
           <Link to="/profile" className="hover:text-gray-400">
-            <HiOutlineUser className="h-7 w-7 text-white-700" />
+            <HiOutlineUser className="h-7 md:h-8 w-7 md:w-8 text-white-70 text-[#00ff00]" />
           </Link>
           <button onClick={toggleNavDrawer} className="md:hidden">
-            <HiBars3BottomRight className="h-8 w-8 text-gray-200" />
+            <HiBars3BottomRight className="h-7 md:h-8 w-7 md:w-8 text-[#00ff00]" />
           </button>
         </div>
       </nav>
-      <Cartdrawer drawerOpen={drawerOpen} toggleCartDrawer={toggleCartDrawer} />
+      <Cartdrawer drawerOpen={drawerOpen} toggleCartDrawer={toggleCartDrawer} className=""/>
 
       {/* mobile navigation */}
 
       <div
         className={` fixed top-0 left-0  w-2/5 sm:w-1/3 h-full bg-[#070707]  shadow-lg transform
-transition-transform duration-300 z-50 
-${navDrawer ? "translate-x-0" : "-translate-x-full"}`}
+        transition-transform duration-300 z-50 
+         ${navDrawer ? "translate-x-0" : "-translate-x-full"}`}
       >
         <div className="flex justify-end p-4 ">
           <button onClick={toggleNavDrawer}>
@@ -166,37 +166,71 @@ ${navDrawer ? "translate-x-0" : "-translate-x-full"}`}
           <h2 className="text-xl  font-semibold mb-8 border-b text-gray-100">
             Menu
           </h2>
-          <nav className="space-y-4">
-            <Link
+          <nav className="space-y-6 flex flex-col">
+            <NavLink
               to="/"
-              onClick={toggleNavDrawer}
-              className="block text-gray-200 hover:text-lime-500"
+              className={({ isActive }) =>
+                `relative inline-block after:absolute
+               after:left-0 after:-bottom-1 after:h-[2px] after:bg-green-500 after:transition-all after:duration-300 
+      ${
+        isActive
+          ? "after:w-full text-gray"
+          : "after:w-0 text-white-700 hover:text-gray hover:after:w-full"
+      } 
+       font-medium `
+              }
             >
               Home
-            </Link>
-            <Link
+            </NavLink>
+            <NavLink
               to="/collections/all"
-              onClick={toggleNavDrawer}
-              className="block text-gray-200 hover:text-lime-500"
+              className={({ isActive }) =>
+                `relative inline-block after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:bg-green-500 after:transition-all after:duration-300 
+      ${
+        isActive
+          ? "after:w-full text-gray-200"
+          : "after:w-0 text-white-700 hover:text-gray hover:after:w-full"
+      } 
+       font-medium `
+              }
             >
               Catogory
-            </Link>
-            <Link
-              to="#"
-              onClick={toggleNavDrawer}
-              className="block text-gray-200 hover:text-lime-500"
+            </NavLink>
+            <NavLink
+              to="/about"
+              className={({ isActive }) =>
+                `relative inline-block after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:bg-green-500 after:transition-all after:duration-300 
+      ${
+        isActive
+          ? "after:w-full text-gray-200"
+          : "after:w-0 text-white-700 hover:text-gray hover:after:w-full"
+      } 
+       font-medium `
+              }
             >
-              Contact
-            </Link>
-            <Link
-              to="#"
-              onClick={toggleNavDrawer}
-              className="block text-gray-200 hover:text-lime-500"
+              About
+            </NavLink>
+            <NavLink
+              to="/support"
+              className={({ isActive }) =>
+                `relative inline-block after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:bg-green-500 after:transition-all after:duration-300 
+      ${
+        isActive
+          ? "after:w-full text-gray-200"
+          : "after:w-0 text-white-700 hover:text-gray hover:after:w-full"
+      } 
+      text- font-medium `
+              }
             >
               Support
-            </Link>
+            </NavLink>
           </nav>
         </div>
+      </div>
+
+      <div className=" sm:hidden pb-2 ">
+        {" "}
+        <Seachbar />
       </div>
     </>
   );

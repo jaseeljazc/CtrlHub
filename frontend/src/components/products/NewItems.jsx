@@ -61,7 +61,7 @@ const NewItems = () => {
     //   </div>
     // </section>
 
-    <section className="px-md-10 px-15 my-10 py-5 flex flex-col items-center text-white">
+    <section className=" sm:px-5 md:px-20 my-10 py-5 flex flex-col items-center text-white">
       <div className="container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
         {newArrivals.map((product) => (
           <Link to={`/product/${product._id}`} className="block">
