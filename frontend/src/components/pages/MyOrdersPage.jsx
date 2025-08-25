@@ -43,7 +43,7 @@ const MyOrder = () => {
                 <tr
                   onClick={() => handleRowClick(order._id)}
                   key={order._id}
-                  className="border-b hover:border-gray-50 cursor-pointer"
+                  className="border-b text-gray-400 hover:border-gray-50 cursor-pointer"
                 >
                   <td className="py-2 px-2 sm:py-4 sm:px-4">
                     <img
@@ -52,7 +52,7 @@ const MyOrder = () => {
                       className="w-10 h-10 sm:w-12 sm:h-12 bg-white object-cover rounded-lg"
                     />
                   </td>
-                  <td className="py-2 px-2 sm:py-4 font-medium text-gray-900 whitespace-nowrap">
+                  <td className="py-2 px-2 sm:py-4 font-medium text-gray-500 whitespace-nowrap">
                     #{order._id}
                   </td>
                   <td className="py-2 px-2 sm:py-4">
@@ -66,7 +66,7 @@ const MyOrder = () => {
                   <td className="py-2 px-2 sm:py-4">
                     {order.orderItems.map((item) => item.name).join(", ")}
                   </td>
-                  <td className="py-2 px-2 sm:py-4 font-bold text-gray-800">
+                  <td className="py-2 px-2 sm:py-4 font-bold text-gray-400">
                     ${order.totalPrice}
                   </td>
                   <td className="py-2 px-2 sm:py-4">

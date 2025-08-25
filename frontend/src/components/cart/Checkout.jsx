@@ -1,10 +1,9 @@
-
-
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import PaypalButton from "./PaypalButton";
 import { useDispatch, useSelector } from "react-redux";
 import { createCheckout } from "../../redux/slices/checkoutSlice";
+import { removeFromCart } from "../../redux/slices/cartSlice";
 import axios from "axios";
 
 const Checkout = () => {
@@ -48,8 +47,56 @@ const Checkout = () => {
     }
   };
 
+  // const handlePaymentSuccess = async (details) => {
+  //   try {
+  //     await axios.put(
+  //       `${import.meta.env.VITE_BACKEND_URL}/api/checkout/${checkoutId}/pay`,
+  //       { paymentStatus: "paid", paymentDetails: details },
+  //       {
+  //         headers: {
+  //           Authorization: `Bearer ${localStorage.getItem("userToken")}`,
+  //         },
+  //       }
+  //     );
+
+  //     // Finalize checkout after successful payment
+  //     await handleFinalizedCheckout(checkoutId);
+  //     navigate("/orders/:id"); // redirect to orders page
+  //   } catch (error) {
+  //     console.error(error);
+  //   }
+  // };
+
+  /// wroking code but cart is not deleting aitomatically
+
+  //   const handlePaymentSuccess = async (details) => {
+  //   try {
+  //     // Mark checkout as paid
+  //     await axios.put(
+  //       `${import.meta.env.VITE_BACKEND_URL}/api/checkout/${checkoutId}/pay`,
+  //       { paymentStatus: "paid", paymentDetails: details },
+  //       {
+  //         headers: {
+  //           Authorization: `Bearer ${localStorage.getItem("userToken")}`,
+  //         },
+  //       }
+  //     );
+
+  //     // Finalize checkout and get the new order
+  //     const newOrder = await handleFinalizedCheckout(checkoutId);
+
+  //     // Redirect to order details page using the new order ID
+  //     if (newOrder?._id) {
+  //       navigate(`/orders/${newOrder._id}`);
+  //     }
+  //   } catch (error) {
+  //     console.error(error);
+  //   }
+  // };
+
   const handlePaymentSuccess = async (details) => {
     try {
+      // Mark checkout as paid
       await axios.put(
         `${import.meta.env.VITE_BACKEND_URL}/api/checkout/${checkoutId}/pay`,
         { paymentStatus: "paid", paymentDetails: details },
@@ -60,18 +107,43 @@ const Checkout = () => {
         }
       );
 
-      // Finalize checkout after successful payment
-      await handleFinalizedCheckout(checkoutId);
-      navigate("/orders"); // redirect to orders page
+      // Finalize checkout and get the new order
+      const newOrder = await handleFinalizedCheckout(checkoutId);
+
+      // Clear the frontend cart
+      dispatch(removeFromCart());
+
+      // Redirect to the order details page
+      if (newOrder?._id) {
+        navigate(`/order/${newOrder._id}`);
+      }
     } catch (error) {
       console.error(error);
     }
   };
 
+  // const handleFinalizedCheckout = async (checkoutId) => {
+  //   try {
+  //     await axios.put(
+  //       `${import.meta.env.VITE_BACKEND_URL}/api/checkout/${checkoutId}/finalize`,
+  //       {},
+  //       {
+  //         headers: {
+  //           Authorization: `Bearer ${localStorage.getItem("userToken")}`,
+  //         },
+  //       }
+  //     );
+  //   } catch (error) {
+  //     console.error(error);
+  //   }
+  // };
+
   const handleFinalizedCheckout = async (checkoutId) => {
     try {
-      await axios.put(
-        `${import.meta.env.VITE_BACKEND_URL}/api/checkout/${checkoutId}/finalize`,
+      const res = await axios.put(
+        `${
+          import.meta.env.VITE_BACKEND_URL
+        }/api/checkout/${checkoutId}/finalize`,
         {},
         {
           headers: {
@@ -79,6 +151,7 @@ const Checkout = () => {
           },
         }
       );
+      return res.data; // return the new order
     } catch (error) {
       console.error(error);
     }
@@ -292,4 +365,3 @@ const Checkout = () => {
 };
 
 export default Checkout;
-

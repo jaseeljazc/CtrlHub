@@ -16,7 +16,7 @@ const OrderDetails = () => {
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error :{error}</p>;
   return (
-    <div className="bg-green-200 rounded-2xl max-w-7xl mx-auto p-4 sm:p-6">
+    <div className="bg-green-200 rounded-2xl max-w-7xl mx-auto p-4 sm:p-6 my-20">
       <h2 className=" text-2xl md:text-3xl font-bold mb-6">Order Details</h2>
       {!orderDetails ? (
         <p>No Order Details found</p>
@@ -66,7 +66,7 @@ const OrderDetails = () => {
               <p>Shipping method: {orderDetails.shippingMethod}</p>
               <p>
                 Address: {""}
-                {`${orderDetails.shippinAddress.city},${orderDetails.shippinAddress.country}`}
+                {`${orderDetails.shippingAddress.city},${orderDetails.shippingAddress.country}`}
               </p>
             </div>
           </div>
