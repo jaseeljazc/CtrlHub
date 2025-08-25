@@ -4,7 +4,6 @@ const Cart = require("../models/Cart");
 const Product = require("../models/Product");
 const Order = require("../models/Order");
 const { protect } = require("../middileware/authMiddleware");
-const { checkout } = require("./cartRoutes");
 
 const router = express.Router();
 
@@ -76,7 +75,7 @@ router.put("/:id/pay", protect, async (req, res) => {
 // @desc Finalize checkout and cover to an order after payment confirrmation
 // @access Private
 
-router.post("/:id/finalize", protect, async (req, res) => {
+router.put("/:id/finalize", protect, async (req, res) => {
   try {
     const checkout = await Checkout.findById(req.params.id);
 

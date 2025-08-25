@@ -64,9 +64,9 @@ const NewItems = () => {
     <section className=" sm:px-5 md:px-20 my-10 py-5 flex flex-col items-center text-white">
       <div className="container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
         {newArrivals.map((product) => (
-          <Link to={`/product/${product._id}`} className="block">
+          <Link key={product._id} to={`/product/${product._id}`} className="block">
             <div
-              key={product._id}
+              
               className="bg-gradient-to-tr from-gray-[#b5b5b5] to-[#1b1b1b]  p-4 rounded-lg"
             >
               {/* Product Image */}

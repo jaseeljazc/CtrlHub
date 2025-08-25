@@ -51,7 +51,7 @@ const App = () => {
               element={<OrderConfirmationPage />}
             />
             <Route path="order/:id" element={<OrderDetails />} />
-            <Route path="/my-orders" element={<MyOrder />} />
+            <Route path="my-orders" element={<MyOrder />} />
 
             {/* user route */}
           </Route>

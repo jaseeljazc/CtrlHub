@@ -6,4 +6,10 @@ import tailwindcss from '@tailwindcss/vite'
 export default defineConfig({
   plugins: [react(),tailwindcss()
 ],
-})
+  // ... other config
+  server: {
+    headers: {
+      'Content-Security-Policy': "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.paypal.com https://*.paypalobjects.com;"
+    }
+}})
+

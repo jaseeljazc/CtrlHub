@@ -53,6 +53,7 @@ const checkoutSchema = new mongoose.Schema(
     isPaid: {
       type: Boolean,
       required: true,
+      default: false,
     },
     paidAt: {
       type: Date,
@@ -68,6 +69,10 @@ const checkoutSchema = new mongoose.Schema(
       type: Boolean,
       default: false,
     },
+    finalizedAt: {
+  type: Date,
+}
+
   },
   {
     timestamps: true,

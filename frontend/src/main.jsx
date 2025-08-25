@@ -23,9 +23,9 @@ const initialOptions = {
 };
 
 createRoot(document.getElementById("root")).render(
-  <StrictMode>
+  // <StrictMode>
     <PayPalScriptProvider options={initialOptions}>
       <App />
     </PayPalScriptProvider>
-  </StrictMode>
+  // {/* </StrictMode> */}
 );
