@@ -59,7 +59,7 @@ const Navbar = () => {
           <NavLink
             to="/"
             className={({ isActive }) =>
-              `relative inline-block after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:bg-green-500 after:transition-all after:duration-300 
+              `relative inline-block after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:bg-green-400 after:transition-all after:duration-300 
       ${
         isActive
           ? "after:w-full text-gray-200"
