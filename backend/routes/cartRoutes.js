@@ -6,6 +6,12 @@ const { get } = require("mongoose");
 
 const router = express.Router();
 
+
+// router.delete("/", (req, res) => {
+//   console.log("DELETE HIT:", req.body, req.query);
+//   res.json({ ok: true });
+// });
+
 // Helper function to get a cart by user by idor guest ID
 
 const getCart = async (userId, guestId) => {
@@ -17,7 +23,7 @@ const getCart = async (userId, guestId) => {
   return null;
 };
 
-// @route POST /aoi/cart
+// @route POST /api/cart
 // @desc Add a product to the cart for a guest or logged in user
 // @access Public
 
