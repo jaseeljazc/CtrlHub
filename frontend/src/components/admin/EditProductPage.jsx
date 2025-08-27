@@ -84,7 +84,7 @@ const EditProductPage = () => {
   if (error) return <p>Error:{error}...</p>;
   return (
     <div className=" max-w-5xl mx-auto p-6 shadow-md rounded-md bg-gray-800 text-gray-300">
-      <h2 className=" text-3xl font-bold mb-6 "> Edit Product </h2>
+      <h2 className=" text-3xl font-bold mb-6 text-center text-[#00ff00]"> Edit Product </h2>
       <form onSubmit={handleSubmit}>
         {/* name */}
         <div className=" mb-6 ">

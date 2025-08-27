@@ -30,9 +30,9 @@ const ProductManagement = () => {
       </h2>
       <Link to="/admin/products/add-product">
       <button className="bg-[#00ff00] font-bold mb-5 rounded-md hover:bg-green-400 px-4 py-2 ">Add Product</button></Link>
-      <div className=" overflow-x-auto shadow-md sm:rounded-lg ">
+      <div className=" overflow-x-auto shadow-md  ">
         <table className=" min-w-full text-left text-gray-500 ">
-          <thead className=" bg-gray-300 text-xs uppercase text-gray-700 ">
+          <thead className=" bg-gray-300 text-xs  uppercase text-gray-700 ">
             <tr>
               <th className=" py-3 px-4">Name </th>
               <th className=" py-3 px-4">Price</th>

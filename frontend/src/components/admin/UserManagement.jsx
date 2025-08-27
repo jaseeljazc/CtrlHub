@@ -71,7 +71,7 @@ const UserManagement = () => {
           {" "}
           Add new user
         </h3>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="">
           <div className="mb-4 ">
             <label className=" block text-gray-500">Name</label>
             <input
@@ -127,7 +127,7 @@ const UserManagement = () => {
       </div>
 
       {/* user list managemaent */}
-      <div className=" overflow-x-auto shadow-md sm:rounded-lg">
+      <div className=" overflow-x-auto shadow-md ">
         <table className=" min-w-full text-left text-gray-500 ">
           <thead className=" bg-gray-100 text-xs uppercase text-gray-700">
             <tr>

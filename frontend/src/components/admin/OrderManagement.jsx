@@ -2,7 +2,7 @@ import React from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { fetchAllOrders  } from "../../redux/slices/adminOrderSlice"
+import { fetchAllOrders, updateOrderStatus  } from "../../redux/slices/adminOrderSlice"
 
 const OrderManagement = () => {
   const dispatch = useDispatch();
@@ -53,7 +53,7 @@ if (error) return <p>Error: {error}...</p>
                     #{order._id}
                   </td>
                   <td className="p-4 "> {order.user.name}</td>
-                  <td className="p-4 "> {order.totlaPrice.toFixed(2)}</td>
+<td className="p-4"> {Number(order.totalPrice || 0).toFixed(2)} </td>
                   <td className="p-4">
                     <select
                       value={order.status}

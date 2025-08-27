@@ -80,7 +80,7 @@ const AdminSidbar = () => {
       <div className="mt-6">
         <button
           onClick={handleLogout}
-          className=" w-full bg-[#00FF00] hover:bg-red-600 font-bold text-black
+          className=" w-full bg-[#00FF00] hover:bg-red-600 font-bold text-black transition duration-200
         py-2 px-4 rounded flex items-center justify-center space-x-2 transition-colors"
         >
           <FaSignOutAlt />
