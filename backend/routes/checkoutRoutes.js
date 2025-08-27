@@ -75,14 +75,70 @@ router.put("/:id/pay", protect, async (req, res) => {
 // @desc Finalize checkout and cover to an order after payment confirrmation
 // @access Private
 
+// router.put("/:id/finalize", protect, async (req, res) => {
+//   try {
+//     const checkout = await Checkout.findById(req.params.id);
+
+//     if (!checkout) {
+//       return res.status(404).json({ message: " Checkout not found" });
+//     }
+
+//     if (checkout.isPaid && !checkout.isFinalized) {
+//       // Create final order based on the checkout details
+//       const finalOrder = await Order.create({
+//         user: checkout.user,
+//         orderItems: checkout.checkoutItems,
+//         shippingAddress: checkout.shippingAddress,
+//         paymentMethod: checkout.paymentMethod,
+//         totalPrice: checkout.totalPrice,
+//         isPaid: true,
+//         paidAt: checkout.paidAt,
+//         isDelivered: false,
+//         paymentStatus: "paid",
+//         paymentDetails: checkout.paymentDetails,
+//       });
+
+//       // Mark the checkout as finalized
+//       checkout.isFinalized = true;
+//       checkout.finalizedAt = Date.now();
+//       await checkout.save();
+
+//       // Delete the cart associated with the user
+//       await Cart.findOneAndDelete({ user: checkout.user });
+
+
+
+//       // Clear the cart instead of deleting it
+// const cart = await Cart.findOne({ user: checkout.user.toString() });
+
+//       res.status(201).json(finalOrder);
+//     } else if (checkout.isFinalized) {
+//       res.status(400).json({ message: "Checkout already finalized" });
+//     } else {
+//       res.status(400).json({ message: "checkout is not paid" });
+//     }
+//   } catch (error) {
+//     console.error(error);
+//     res.status(500).json({ message: "Server Error" });
+//   }
+// });
+
+
+
+
+
+
+
+
+// Fixed finalize endpoint
 router.put("/:id/finalize", protect, async (req, res) => {
   try {
     const checkout = await Checkout.findById(req.params.id);
-
+    
     if (!checkout) {
-      return res.status(404).json({ message: " Checkout not found" });
+      return res.status(404).json({ message: "Checkout not found" });
     }
-
+    
     if (checkout.isPaid && !checkout.isFinalized) {
       // Create final order based on the checkout details
       const finalOrder = await Order.create({
@@ -97,22 +153,31 @@ router.put("/:id/finalize", protect, async (req, res) => {
         paymentStatus: "paid",
         paymentDetails: checkout.paymentDetails,
       });
-
+      
       // Mark the checkout as finalized
       checkout.isFinalized = true;
       checkout.finalizedAt = Date.now();
       await checkout.save();
-
-      // Delete the cart associated with the user
-      await Cart.findOneAndDelete({ user: checkout.user });
+      
+      // FIXED: Properly delete the cart associated with the user
+      try {
+        const deletedCart = await Cart.findOneAndDelete({ 
+          user: checkout.user.toString() // Convert to string for proper matching
+        });
+        console.log("Cart deletion result:", deletedCart ? "Success" : "No cart found");
+      } catch (cartError) {
+        console.error("Error deleting cart:", cartError);
+        // Don't fail the entire request if cart deletion fails
+      }
+      
       res.status(201).json(finalOrder);
     } else if (checkout.isFinalized) {
       res.status(400).json({ message: "Checkout already finalized" });
     } else {
-      res.status(400).json({ message: "checkout is not paid" });
+      res.status(400).json({ message: "Checkout is not paid" });
     }
   } catch (error) {
-    console.error(error);
+    console.error("Finalize checkout error:", error);
     res.status(500).json({ message: "Server Error" });
   }
 });

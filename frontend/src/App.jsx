@@ -59,7 +59,7 @@ const App = () => {
             <Route
               index
               element={
-                <ProtectedRoute role="admin" >
+                <ProtectedRoute role="admin">
                   <AdminHomePage />
                 </ProtectedRoute>
               }
