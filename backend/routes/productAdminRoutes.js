@@ -23,11 +23,39 @@ router.get("/", protect, admin, async (req, res) => {
 // @route POST /api/admin/products
 // @desc Add a new product (Admin only)
 // @access Private/Admin
+// router.post("/", protect, admin, async (req, res) => {
+//   try {
+//     const { name, description, price, countInStock, sku, category, brand, colors, collections, rgb, images } = req.body;
+
+//     const product = new Product({
+//       name,
+//       description,
+//       price,
+//       countInStock,
+//       sku,
+//       category,
+//       brand,
+//       colors,
+//       collections,
+//       rgb,
+//       images,
+//     });
+
+//     const createdProduct = await product.save();
+//     res.status(201).json(createdProduct);
+//   } catch (error) {
+//     console.error(error);
+//     res.status(500).json({ message: "Server Error" });
+//   }
+// });
+
+
+
+
+
 router.post("/", protect, admin, async (req, res) => {
   try {
-    const { name, description, price, countInStock, sku, category, brand, colors, collections, rgb, images } = req.body;
-
-    const product = new Product({
+    const {
       name,
       description,
       price,
@@ -39,15 +67,42 @@ router.post("/", protect, admin, async (req, res) => {
       collections,
       rgb,
       images,
+    } = req.body;
+
+
+        // inside your createProduct controller
+const existingProduct = await Product.findOne({ sku: req.body.sku });
+if (existingProduct) {
+  return res.status(400).json({ message: "SKU already exists. Please choose a unique one." });
+}
+
+    const product = new Product({
+      user: req.user._id, // ✅ required field
+      name,
+      description,
+      price,
+      countInStock,
+      sku,
+      category,
+      brand,
+      colors,
+      collections,
+      rgb,
+      images, // expects array of { url, altText }
     });
+    
+
+
+
 
     const createdProduct = await product.save();
     res.status(201).json(createdProduct);
   } catch (error) {
     console.error(error);
-    res.status(500).json({ message: "Server Error" });
+    res.status(500).json({ message: "Server Error", error: error.message });
   }
 });
+
 
 // @route PUT /api/admin/products/:id
 // @desc Update product (Admin only)

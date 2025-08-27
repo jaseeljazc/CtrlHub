@@ -25,6 +25,7 @@ import store from "./redux/store";
 import ProtectedRoute from "./components/commen/ProtectedRoute";
 import About from "./components/pages/About";
 import SupportPage from "./components/pages/SupportPage";
+import AddProduct from "./components/admin/AddProduct";
 
 const App = () => {
   return (
@@ -68,6 +69,7 @@ const App = () => {
             <Route path="products" element={<ProductManagement />} />
             <Route path="products/:id/edit" element={<EditProductPage />} />
             <Route path="orders" element={<OrderManagement />} />
+            <Route path="products/add-product" element={<AddProduct />} />
             {/* admin route */}
           </Route>
         </Routes>
