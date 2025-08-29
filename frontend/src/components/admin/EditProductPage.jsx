@@ -4,8 +4,8 @@ import { MdDragHandle } from "react-icons/md";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
 import { updateProduct } from "../../redux/slices/adminProductSlice";
-import { fetchProductsByDetails, } from "../../redux/slices/productSlice";
-import axios from "axios"
+import { fetchProductsByDetails } from "../../redux/slices/productSlice";
+import axios from "axios";
 
 const EditProductPage = () => {
   const dispatch = useDispatch();
@@ -16,7 +16,6 @@ const EditProductPage = () => {
   );
 
   const [uploading, setUploading] = useState(false);
-
 
   const [productData, setProductData] = useState({
     name: "",
@@ -84,7 +83,10 @@ const EditProductPage = () => {
   if (error) return <p>Error:{error}...</p>;
   return (
     <div className=" max-w-5xl mx-auto p-6 shadow-md rounded-md bg-gray-800 text-gray-300">
-      <h2 className=" text-3xl font-bold mb-6 text-center text-[#00ff00]"> Edit Product </h2>
+      <h2 className=" text-3xl font-bold mb-6 text-center text-[#00ff00]">
+        {" "}
+        Edit Product{" "}
+      </h2>
       <form onSubmit={handleSubmit}>
         {/* name */}
         <div className=" mb-6 ">
@@ -119,6 +121,18 @@ const EditProductPage = () => {
             type="number"
             name="price"
             value={productData.price}
+            onChange={handleChange}
+            className=" w-full border border-gray-300 rounded-md p-2"
+          />
+        </div>
+
+        {/* Discount price */}
+        <div className=" mb-6 ">
+          <label className=" block font-semibold mb-2 ">Discounted price</label>
+          <input
+            type="number"
+            name="discountPrice"
+            value={productData.discountPrice}
             onChange={handleChange}
             className=" w-full border border-gray-300 rounded-md p-2"
           />
@@ -174,16 +188,27 @@ const EditProductPage = () => {
         <div className=" mb-6 ">
           <label className=" block font-semiboldmb-2 ">Upload image</label>
           <input type="file" onChange={handleImageUpload} className="" />
-          { uploading && <p>Uploading image...</p>}
+          {uploading && <p>Uploading image...</p>}
           <div className=" flex gap-4 mt-4">
             {productData.images.map((image, index) => (
               <div key={index}>
-                <img
+                {/* <img
                   src={image.url}
-                  // src={`${import.meta.env.VITE_BACKEND_URL}${product.images[0]?.url}`}
 
                   alt={image.name}
                   className=" w-20 h-20 object-cover rounded-md shadow-md"
+                /> */}
+
+                <img
+                  src={
+                    image?.url && image.url.trim() !== ""
+                      ? image.url.startsWith("http")
+                        ? image.url // Cloudinary/external image
+                        : `${import.meta.env.VITE_BACKEND_URL}${image.url}` // Local backend/public image
+                      : "/images/FutureTour.jpeg" // fallback placeholder
+                  }
+                  alt={image?.altText || image?.name || "Product"}
+                  className="w-20 h-20 object-cover rounded-md shadow-md"
                 />
               </div>
             ))}

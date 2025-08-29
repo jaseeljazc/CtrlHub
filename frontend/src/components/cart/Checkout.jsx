@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import PaypalButton from "./PaypalButton";
 import { useDispatch, useSelector } from "react-redux";
 import { createCheckout } from "../../redux/slices/checkoutSlice";
-import { removeFromCart,clearCart} from "../../redux/slices/cartSlice";
+import { removeFromCart, clearCart } from "../../redux/slices/cartSlice";
 import axios from "axios";
 
 const Checkout = () => {
@@ -49,145 +49,65 @@ const Checkout = () => {
 
 
 
-
-
-
-//   // Updated handlePaymentSuccess function
-// const handlePaymentSuccess = async (details) => {
-//   try {
-//     // Mark checkout as paid
-//     await axios.put(
-//       `${import.meta.env.VITE_BACKEND_URL}/api/checkout/${checkoutId}/pay`,
-//       { paymentStatus: "paid", paymentDetails: details },
-//       {
-//         headers: {
-//           Authorization: `Bearer ${localStorage.getItem("userToken")}`,
-//         },
-//       }
-//     );
-
-//     // Finalize checkout and get the new order
-//     const newOrder = await handleFinalizedCheckout(checkoutId);
-
-//     // FIXED: Clear the frontend cart completely using the clearCart action
-//     dispatch(clearCart());
-
-//     // Redirect to the order details page
-//     if (newOrder?._id) {
-//       navigate(`order/${newOrder._id}`);
-//     }
-//   } catch (error) {
-//     console.error("Payment success error:", error);
-//   }
-// };
-
-
-  // const handleFinalizedCheckout = async (checkoutId) => {
-  //   try {
-  //     const res = await axios.put(
-  //       `${
-  //         import.meta.env.VITE_BACKEND_URL
-  //       }/api/checkout/${checkoutId}/finalize`,
-  //       {},
-  //       {
-  //         headers: {
-  //           Authorization: `Bearer ${localStorage.getItem("userToken")}`,
-  //         },
-  //       }
-  //     );
-  //     return res.data; // return the new order
-  //   } catch (error) {
-  //     console.error(error);
-  //   }
-  // };
-
-  // if (loading) return <p>Loading cart...</p>;
-  // if (error) return <p>Error: {error}</p>;
-  // if (!cart || !cart.products || cart.products.length === 0) {
-  //   return <p>Your cart is empty</p>;
-  // }
-
-
-const handleFinalizedCheckout = async (checkoutId) => {
-  try {
-    const res = await axios.put( // Changed back to PUT to match your backend
-      `${import.meta.env.VITE_BACKEND_URL}/api/checkout/${checkoutId}/finalize`,
-      {},
-      {
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem("userToken")}`,
-        },
-      }
-    );
-    return res.data; // This will be the finalOrder object
-  } catch (error) {
-    console.error("Finalize checkout error:", error.response?.data || error.message);
-    throw error;
-  }
-};
-
-
-// const handlePaymentSuccess = async (details) => {
-//   try {
-//     // ... your existing code ...
-
-//     const newOrder = await handleFinalizedCheckout(checkoutId);
-//     console.log("New order:", newOrder); // Debug log
-
-//     dispatch(clearCart());
-
-//     if (newOrder?._id) {
-//       console.log("Navigating to:", `/order/${newOrder._id}`); // Debug log
-//       navigate(`/order/${newOrder._id}`);
-//       console.log("Navigation called"); // Debug log
-//     } else {
-//       console.error("No order ID found");
-//     }
-//   } catch (error) {
-//     console.error("Payment success error:", error);
-//   }
-// };
-
-
-
-const handlePaymentSuccess = async (details) => {
-  try {
-    // Mark checkout as paid
-    await axios.put(
-      `${import.meta.env.VITE_BACKEND_URL}/api/checkout/${checkoutId}/pay`,
-      { paymentStatus: "paid", paymentDetails: details },
-      {
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem("userToken")}`,
-        },
-      }
-    );
-
-    // Finalize checkout and get the new order
-    const newOrder = await handleFinalizedCheckout(checkoutId);
-    console.log("New order:", newOrder);
-
-    // Navigate FIRST, then clear cart
-    if (newOrder?._id) {
-      navigate(`/order/${newOrder._id}`);
-      // Clear cart after navigation
-      setTimeout(() => {
-        dispatch(clearCart());
-      }, 100);
-    } else {
-      console.error("No order ID found in response");
-      dispatch(clearCart());
-      navigate('/orders');
+  const handleFinalizedCheckout = async (checkoutId) => {
+    try {
+      const res = await axios.put(
+        // Changed back to PUT to match your backend
+        `${
+          import.meta.env.VITE_BACKEND_URL
+        }/api/checkout/${checkoutId}/finalize`,
+        {},
+        {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("userToken")}`,
+          },
+        }
+      );
+      return res.data; // This will be the finalOrder object
+    } catch (error) {
+      console.error(
+        "Finalize checkout error:",
+        error.response?.data || error.message
+      );
+      throw error;
     }
-    
-  } catch (error) {
-    console.error("Payment success error:", error);
-    dispatch(clearCart());
-    navigate('/orders');
-  }
-};
+  };
 
+  const handlePaymentSuccess = async (details) => {
+    try {
+      // Mark checkout as paid
+      await axios.put(
+        `${import.meta.env.VITE_BACKEND_URL}/api/checkout/${checkoutId}/pay`,
+        { paymentStatus: "paid", paymentDetails: details },
+        {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("userToken")}`,
+          },
+        }
+      );
 
+      // Finalize checkout and get the new order
+      const newOrder = await handleFinalizedCheckout(checkoutId);
+      console.log("New order:", newOrder);
+
+      // Navigate FIRST, then clear cart
+      if (newOrder?._id) {
+        navigate(`/order/${newOrder._id}`);
+        // Clear cart after navigation
+        setTimeout(() => {
+          dispatch(clearCart());
+        }, 100);
+      } else {
+        console.error("No order ID found in response");
+        dispatch(clearCart());
+        navigate("/orders");
+      }
+    } catch (error) {
+      console.error("Payment success error:", error);
+      dispatch(clearCart());
+      navigate("/orders");
+    }
+  };
 
   return (
     <div

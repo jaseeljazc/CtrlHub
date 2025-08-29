@@ -36,7 +36,7 @@ const CartContent = ({ cart, userId, guestId }) => {
           className="flex text-gray-950 items-start justify-between
         py-4 border-b border-gray-500"
         >
-          <div className="flex items-start">
+          <div className="flex items-start flex-col sm:flex-row">
             {/* <img
               src={`${import.meta.env.VITE_BACKEND_URL}${product.image}`}
               alt={product.name}
@@ -89,14 +89,14 @@ const CartContent = ({ cart, userId, guestId }) => {
               </div>
             </div>
           </div>
-          <div>
+          <div className="flex flex-col self-center pt-23 sm:pt-0">
             <p className="text-white">${product.price.toLocaleString()}</p>
             <button
               onClick={() =>
                 handleRemoveFromCart(product.productId, product.color)
               }
             >
-              <MdDeleteForever className="w-6 h-6 mt-7 ml-5 text-red-600" />
+              <MdDeleteForever className="w-8 h-8 mt-12 ml-5 text-red-600 " />
             </button>
           </div>
         </div>

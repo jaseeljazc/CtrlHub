@@ -13,6 +13,7 @@ const AddProduct = () => {
     name: "",
     description: "",
     price: "",
+    discountPrice:"",
     countInStock: "",
     sku: "",
     category: "",

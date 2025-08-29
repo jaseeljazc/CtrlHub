@@ -28,6 +28,7 @@ router.post("/", protect, admin, async (req, res) => {
       name,
       description,
       price,
+      discountPrice,
       countInStock,
       sku,
       category,
@@ -50,6 +51,7 @@ router.post("/", protect, admin, async (req, res) => {
       name,
       description,
       price,
+      discountPrice,
       countInStock,
       sku,
       category,
@@ -79,6 +81,7 @@ router.put("/:id", protect, admin, async (req, res) => {
       product.name = req.body.name || product.name;
       product.description = req.body.description || product.description;
       product.price = req.body.price || product.price;
+      product.discountPrice = req.body.discountPrice || product.discountPrice;
       product.countInStock = req.body.countInStock || product.countInStock;
       product.sku = req.body.sku || product.sku;
       product.category = req.body.category || product.category;
