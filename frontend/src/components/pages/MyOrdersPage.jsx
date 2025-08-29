@@ -1,23 +1,23 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { fetchUserOrders } from "../../redux/slices/orderSlice"
+import { fetchUserOrders } from "../../redux/slices/orderSlice";
 
 const MyOrder = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { orders, loading, error } = useSelector((state) => state.orders);
-   
-  useEffect(()=> {
-    dispatch(fetchUserOrders())
-  }, [dispatch])
+
+  useEffect(() => {
+    dispatch(fetchUserOrders());
+  }, [dispatch]);
 
   const handleRowClick = (orderId) => {
     navigate(`/order/${orderId}`);
   };
 
-  if (loading) return <p>Loading...</p>
-  if (error) return <p>Error:{error}</p>
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error:{error}</p>;
 
   return (
     <div className="max-w-7xl mx-auto p-4 sm:p-6">
@@ -47,8 +47,17 @@ const MyOrder = () => {
                 >
                   <td className="py-2 px-2 sm:py-4 sm:px-4">
                     <img
-                      src={order.orderItems[0].image}
-                      alt={order.orderItems[0].name}
+                      src={
+                        order.orderItems[0].image &&
+                        order.orderItems[0].image.trim() !== ""
+                          ? order.orderItems[0].image.startsWith("http")
+                            ? order.orderItems[0].image // Cloudinary/external URL
+                            : `${import.meta.env.VITE_BACKEND_URL}${
+                                order.orderItems[0].image
+                              }` // Local backend/public image
+                          : "/images/FutureTour.jpeg" // Fallback placeholder
+                      }
+                      alt={order.orderItems[0].name || "Product"}
                       className="w-10 h-10 sm:w-12 sm:h-12 bg-white object-cover rounded-lg"
                     />
                   </td>
