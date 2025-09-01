@@ -30,7 +30,7 @@ const Hero = () => {
             Explore our gaming accessories with fast world wide shipping
           </p>
           <Link
-            to="#"
+            to="/collections/all"
             className="bg-gray-
              hover:text-[#00ff00] hover:bg-transparent  border border-[#00ff00] rounded-[-7px] p-3
             text-lg bg-[#00ff00] text-gray-950 transform transition-colors duration-300 ease-in-out "

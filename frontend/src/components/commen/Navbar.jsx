@@ -5,6 +5,8 @@ import {
   HiOutlineShoppingBag,
   HiBars3BottomRight,
 } from "react-icons/hi2";
+import { RiMenuLine } from "react-icons/ri";
+
 import { IoMdCart } from "react-icons/io";
 import Seachbar from "./Seachbar";
 import Cartdrawer from "../layout/Cartdrawer";
@@ -42,7 +44,7 @@ const Navbar = () => {
         >
           <Link
             to="/"
-            className="text-2xl md:text-3xl animate-gradient-text keycap-font font-black "
+            className="text-xl md:text-2xl animate-gradient-text font-keyboard font-black "
           >
             Ctrlhub
           </Link>
@@ -143,11 +145,15 @@ const Navbar = () => {
             <HiOutlineUser className="h-7 md:h-8 w-7 md:w-8 text-white-70 text-[#00ff00]" />
           </Link>
           <button onClick={toggleNavDrawer} className="md:hidden">
-            <HiBars3BottomRight className="h-7 md:h-8 w-7 md:w-8 text-[#00ff00]" />
+            <RiMenuLine className="h-7 md:h-8 w-7 md:w-8 text-[#00ff00]" />
           </button>
         </div>
       </nav>
-      <Cartdrawer drawerOpen={drawerOpen} toggleCartDrawer={toggleCartDrawer} className=""/>
+      <Cartdrawer
+        drawerOpen={drawerOpen}
+        toggleCartDrawer={toggleCartDrawer}
+        className=""
+      />
 
       {/* mobile navigation */}
 

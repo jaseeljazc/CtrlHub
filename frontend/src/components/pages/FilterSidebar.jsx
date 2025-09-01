@@ -19,7 +19,7 @@ const FilterSidebar = () => {
   const [priceRange, setPriceRange] = useState([0, 10000]);
 
   const catogories = ["Gaming gear", "Gaming Setup"];
-  const colors = ["Red", "Blue", "Green", "Yellow", "Gray", "White", "Pink", "Beige", "Neon"];
+  const colors = ["Red", "Blue", "Green", "Yellow", "Gray", "White", "Pink", "Beige", "Black"];
   const rgb = ["No", "Yes"];
   const brands = ["zebronics", "RedGear", "Evofox", "Sony"];
 

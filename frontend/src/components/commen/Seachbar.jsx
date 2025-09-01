@@ -33,7 +33,7 @@ const Seachbar = () => {
               placeholder="Search"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="bg-gray-200 h-70px px-4 border-2 border-lime-500 py-1 sm:py-2 pr-12 text-black rounded-[10px] focus:outline-none
+              className="bg-gray-200 h-70px px-4 border-2 border-lime-500 py-1 mt-2 mb-1 sm:mt-0 sm:mb-0 sm:py-2 pr-12 text-black rounded-[10px] focus:outline-none
                 w-full placeholder:text-black-700"
             />
             <button

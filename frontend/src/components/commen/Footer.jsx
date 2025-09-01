@@ -10,9 +10,16 @@ const Footer = () => {
   return (
     <footer className=' border-b px-10 py-15' >
         <div className='border-t border-white mb-15'></div>
-        <div className="container mx-auto  grid grid-col-1 md:grid-cols-4 gap-15
-        px-4 lg:px- lg:ml-3">
-            <div>
+        {/* <div className="container mx-auto  grid grid-col-1 md:grid-cols-4 gap-15
+        px-4 lg:px- lg:ml-3 r"> */}
+        <div className="container mx-auto flex sm:justify-evenly flex-col sm:flex-row
+        px-4 lg:px- lg:ml-3 gap-15 sm:gap-0">
+
+
+
+
+
+            {/* <div>
                 <h3 className='text-lg text-gray-200 font-bold mb-4 '>
                     Newsletter
 
@@ -23,7 +30,6 @@ const Footer = () => {
                 <p className='font-medium text-sm text-gray-500 mb-6'>
                     Sign up and get 10% off your first order
                 </p>
-                {/* newsletter form */}
                 <form action="" className='flex'>
                     <input type="email" placeholder='Enter your email'
                     className='p-3 w-full text-sm placeholder:text-gray-600 border-t border-r border-l border-b border-gray-200
@@ -32,7 +38,7 @@ const Footer = () => {
                     <button type='submit' className='bg-black text-white px-6 py-3 text-sm
                     rounded-r-md hover:bg-gray-200 hover:text-black transition-all'>Subscribe</button>
                 </form>
-            </div>
+            </div> */}
             {/* shop */}
             <div className='text-center'>
                 <h3 className='text-lg text-gray-200 mb-4 font-bold'>

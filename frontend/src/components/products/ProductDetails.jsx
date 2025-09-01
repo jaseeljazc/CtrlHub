@@ -90,7 +90,7 @@ const ProductDetails = ({ productId }) => {
   return (
     <div>
       {selectedProduct && (
-        <div className="max-w-6xl mx-auto bg-whi p-8 rounded-lg">
+        <div className="max-w-6xl sm:max-w-xl md:max-w-6xl mx-auto bg-whi p-8 rounded-lg">
           <div className="flex flex-col md:flex-row">
             {/* left thumbnail */}
             <div className="hidden md:flex flex-col space-x-4 mr-6 cursor-pointer">

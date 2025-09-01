@@ -17,7 +17,7 @@ const ProGrid = ({ products, loading, error }) => {
 
         return (
           <Link key={index} to={`/product/${product._id}`} className="block">
-            <div className="bg-gradient-to-tr from-gray-[#b5b5b5] to-[#1b1b1b] p-4 rounded-lg">
+            <div className="bg-gradient-to-tr h-[390px] from-gray-[#b5b5b5] to-[#1b1b1b] p-4 rounded-lg border sm:border-transparent border-transparent border-b-gray-800">
               {/* Product Image */}
               {/* <div className="w-full h-56 mb-4">
           <img
