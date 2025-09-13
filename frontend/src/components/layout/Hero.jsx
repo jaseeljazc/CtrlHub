@@ -19,8 +19,8 @@ const Hero = () => {
         <div className="text-center text--500 pb-0 lg:pb-30 p-6 ">
           {/* <h6 className="md:text-3xl font-bold sm:text-3xl">WELCOME TO </h6> */}
           <h1
-            className="text-5xl sm:text-3xl md:text-6xl lg:text-8xl font-bold tracking-tighter
-            uppercase mb-4 animate-gradient-text drop-shadow-lg "
+            className="text-5xl sm:text-3xl md:text-6xl lg:text-8xl font-bold tracking-tighte
+            uppercase mb-4 animate-gradient-tex drop-shadow-lg text-black"
           >
             Build Your Arena <br /> 
           </h1>

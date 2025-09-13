@@ -52,7 +52,7 @@ const [searchParams] = useSearchParams();
 
 
   return (
-    <div className="flex flex-col lg:flex-row text-gray-500">
+    <div className=" flex flex-col lg:flex-row text-gray-500">
       {/* mobile filter button */}
       <button
         onClick={toggleSidebar}

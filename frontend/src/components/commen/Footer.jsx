@@ -8,8 +8,8 @@ import { FiPhoneCall } from 'react-icons/fi';
 
 const Footer = () => {
   return (
-    <footer className=' border-b px-10 py-15' >
-        <div className='border-t border-white mb-15'></div>
+    <footer className=' border-b px-10 py-15 ' >
+        <div className='border-t border-white mb-15 '></div>
         {/* <div className="container mx-auto  grid grid-col-1 md:grid-cols-4 gap-15
         px-4 lg:px- lg:ml-3 r"> */}
         <div className="container mx-auto flex sm:justify-evenly flex-col sm:flex-row
@@ -40,7 +40,7 @@ const Footer = () => {
                 </form>
             </div> */}
             {/* shop */}
-            <div className='text-center'>
+            <div className='text-center '>
                 <h3 className='text-lg text-gray-200 mb-4 font-bold'>
                     Shop
                 </h3>

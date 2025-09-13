@@ -30,7 +30,7 @@ const Profile = () => {
             space-y-7 md:space-y-0 justify-start"
         >
           {/* left section */}
-          <div className="w-full bg-gray-900 md:w-1/3 lg:w-1/4 shadow-md rounded-lg p-6">
+          <div className="w-full md:w-1/3 lg:w-1/4 shadow-md rounded-lg p-6">
             <h1 className="text-2xl md:text-3xl text-white  font-bold mb-4">
               {user?.name}
             </h1>

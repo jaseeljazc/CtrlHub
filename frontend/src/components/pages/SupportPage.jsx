@@ -76,13 +76,14 @@ const SupportPage = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-black relative overflow-hidden pt-20">
+    <div className="min-h-screen bg-gradient-to-t
+    from-violet-600 to-black relative overflow-hidden pt-20">
       {/* Animated background elements */}
-      <div className="absolute inset-0">
+      {/* <div className="absolute inset-0">
         <div className="absolute -top-4 -right-4 w-72 h-72 bg-green-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
         <div className="absolute -bottom-8 -left-4 w-72 h-72 bg-green-400 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse delay-75"></div>
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-green-600 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse delay-150"></div>
-      </div>
+      </div> */}
 
       <div className={`relative z-10 container mx-auto px-4 py-12 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
         

@@ -42,18 +42,20 @@
 .animate-gradient-text {
   background: linear-gradient(
     270deg,
-    #00f0ff,  /* Neon Blue */
-    #1e90ff,  /* Blue */
-    #8a2be2,  /* Purple */
-    #9400d3,  /* Indigo */
-    #ff00ff,  /* Neon Pink */
-    #ff69b4,  /* Pink */
-    #00ffff,  /* Cyan */
-    #1e90ff,  /* Blue */
-
-    #4b0082   /* Indigo */
+    
+ 
+    #00f0ff,  
+    #1e90ff,  
+    #8a2be2,  
+    #9400d3,  
+    #ff00ff,  
+    #ff69b4,  
+    #00ffff,  
+    #1e90ff,  
+    #4b0082   
   );
-  background-size: 1600% 1600%; /* larger for smoother flow */
+  
+  background-size: 1600% 1600%; 
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: gradient-animate 15s linear infinite;

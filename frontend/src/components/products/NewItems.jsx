@@ -21,35 +21,34 @@ const NewItems = () => {
   }, []);
 
   return (
-    
-
     <section className=" sm:px-5 md:px-20 my-10 py-5 flex flex-col items-center text-white">
       <div className="container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 ">
         {newArrivals.map((product) => (
-          <Link key={product._id} to={`/product/${product._id}`} className="block">
-            <div
-              
-              className="bg-gradient-to-tr from-gray-[#b5b5b5] to-[#1b1b1b]  p-4 rounded-lg border sm:border-gray-900 border-transparent border-b-gray-800"
-            >
-    
-
-
-
+          <Link
+            key={product._id}
+            to={`/product/${product._id}`}
+            className="block"
+          >
+            <div className="bg-gradient-to-tr from-gray-[#b5b5b5] to-[#1b1b1b]   p-4 rounded-lg border sm:border-gray-900 border-transparent border-b-gray-800">
               {/* Product Image */}
-<div className="w-full h-56 mb-4">
-  <img
-    src={
-      product?.images?.[0]?.url && product.images[0].url.trim() !== ""
-        ? product.images[0].url.startsWith("http")
-          ? product.images[0].url // Cloudinary (or any external URL)
-          : `${import.meta.env.VITE_BACKEND_URL}${product.images[0].url}` // Local backend image
-        : "/images/FutureTour.jpeg" // Fallback image
-    }
-    alt={product?.images?.[0]?.altText || product?.name || "Product"}
-    className="w-full h-full object-contain rounded-lg transform transition-transform duration-300 hover:scale-110"
-  />
-</div>
-
+              <div className="w-full h-56 mb-4">
+                <img
+                  src={
+                    product?.images?.[0]?.url &&
+                    product.images[0].url.trim() !== ""
+                      ? product.images[0].url.startsWith("http")
+                        ? product.images[0].url // Cloudinary (or any external URL)
+                        : `${import.meta.env.VITE_BACKEND_URL}${
+                            product.images[0].url
+                          }` // Local backend image
+                      : "/images/FutureTour.jpeg" // Fallback image
+                  }
+                  alt={
+                    product?.images?.[0]?.altText || product?.name || "Product"
+                  }
+                  className="w-full h-full object-contain rounded-lg transform transition-transform duration-300 hover:scale-110"
+                />
+              </div>
 
               {/* Product Info */}
               <h3 className="text-md mb-2 text-gray-300 truncate-2-lines">

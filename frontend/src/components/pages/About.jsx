@@ -30,10 +30,10 @@ const About = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-black text-white ">
       {/* Hero Section */}
       <section className="relative py-20 px-4 overflow-hidden ">
-        <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black"></div>
+        {/* <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black"></div> */}
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-20 left-10 w-32 h-32 border border-green-500 rotate-45"></div>
           <div className="absolute top-40 right-20 w-24 h-24 border border-green-500 rotate-12"></div>
@@ -41,10 +41,10 @@ const About = () => {
         </div>
 
         <div className="relative max-w-6xl mx-auto text-center">
-          <div className="inline-block p-3 bg-green-500 bg-opacity-20 rounded-full mb-6">
+          <div className="inline-block p-3 bg-violet-600 bg-opacity-20 rounded-full mb-6">
             <Target className="w-12 h-12 text-black" />
           </div>
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white to-green-500 bg-clip-text text-transparent">
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white to-violet-800 bg-clip-text text-transparent">
             Level Up Your Game
           </h1>
           <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
@@ -75,9 +75,9 @@ const About = () => {
               </p>
             </div>
             <div className="relative">
-              <div className="bg-gradient-to-br from-green-500 to-green-600 p-8 rounded-2xl transform rotate-3 shadow-2xl">
+              <div className="bg-gradient-to-br from-violet-600 to-black-600 p-8 rounded-2xl transform rotate-3 shadow-2xl">
                 <div className="bg-black p-6 rounded-xl transform -rotate-3">
-                  <Zap className="w-16 h-16 text-green-500 mb-4 mx-auto" />
+                  <Zap className="w-16 h-16 text-violet-500 mb-4 mx-auto" />
                   <h3 className="text-2xl font-bold text-center text-white mb-2">
                     Game Changing Quality
                   </h3>
@@ -103,9 +103,9 @@ const About = () => {
               return (
                 <div
                   key={index}
-                  className="bg-gray-900 border border-gray-800 rounded-xl p-6 w-50 h-40 flex flex-col column text-center hover:border-green-500 hover:shadow-[0_0_15px_rgba(34,197,94,0.5)] transition-all duration-300 group cursor-pointer"
+                  className="bg-gray-900 border border-gray-800 rounded-xl p-6 w-50 h-40 flex flex-col column text-center hover:border-violet-500 hover:shadow-[0_0_15px_rgba(34,197,94,0.5)] transition-all duration-300 group cursor-pointer"
                 >
-                  <IconComponent className="w-12 h-12 text-green-500 mx-auto mb-4 group-hover:scale-110 transition-transform duration-300" />
+                  <IconComponent className="w-12 h-12 text-violet-700 mx-auto mb-4 group-hover:scale-110 transition-transform duration-300" />
                   <h3 className="text-white font-semibold text-left">
                     {product.name}
                   </h3>
@@ -116,7 +116,7 @@ const About = () => {
 
           <div className="mt-12 text-center">
             <p className="text-gray-300 text-lg max-w-4xl mx-auto">
-              <span className="text-green-500 font-semibold">
+              <span className="text-violet-500 font-semibold">
                 Gaming Mice • Gaming Keyboards • Gaming Monitors • Gaming
                 Headphones • Mousepads • Laptop Stands • LED Strips • Gaming
                 Consoles • Controllers • Gaming Chairs
@@ -157,7 +157,7 @@ const About = () => {
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-gray-900 border border-gray-800 rounded-xl p-8 hover:border-green-500 hover:shadow-[0_0_15px_rgba(34,197,94,0.5)] transition-all duration-300">
-              <div className="w-16 h-16 bg-green-500 bg-opacity-20 rounded-full flex items-center justify-center mb-6">
+              <div className="w-16 h-16 bg-violet-600 bg-opacity-20 rounded-full flex items-center justify-center mb-6">
                 <Award className="w-8 h-8 text-black" />
               </div>
               <h3 className="text-2xl font-bold text-white mb-4">
@@ -170,7 +170,7 @@ const About = () => {
             </div>
 
             <div className="bg-gray-900 border border-gray-800 rounded-xl p-8 hover:border-green-500 hover:shadow-[0_0_15px_rgba(34,197,94,0.5)] transition-all duration-300">
-              <div className="w-16 h-16 bg-green-500 bg-opacity-20 rounded-full flex items-center justify-center mb-6">
+              <div className="w-16 h-16 bg-violet-600 bg-opacity-20 rounded-full flex items-center justify-center mb-6">
                 <Zap className="w-8 h-8 text-black" />
               </div>
               <h3 className="text-2xl font-bold text-white mb-4">
@@ -183,7 +183,7 @@ const About = () => {
             </div>
 
             <div className="bg-gray-900 border border-gray-800 rounded-xl p-8 hover:border-green-500 hover:shadow-[0_0_15px_rgba(34,197,94,0.5)] transition-all duration-300">
-              <div className="w-16 h-16 bg-green-500 bg-opacity-20 rounded-full flex items-center justify-center mb-6">
+              <div className="w-16 h-16 bg-violet-600 bg-opacity-20 rounded-full flex items-center justify-center mb-6">
                 <Users className="w-8 h-8 text-black" />
               </div>
               <h3 className="text-2xl font-bold text-white mb-4">
@@ -199,7 +199,7 @@ const About = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-4 bg-gradient-to-r from-green-500 to-green-600">
+      <section className="py-20 px-4 bg-gradient-to-b from-violet-500 to-black">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl md:text-5xl font-bold text-black mb-6">
             Ready to Dominate?
@@ -227,3 +227,5 @@ const About = () => {
 };
 
 export default About;
+
+

@@ -88,9 +88,9 @@ const ProductDetails = ({ productId }) => {
   }
 
   return (
-    <div>
+    <div className="">
       {selectedProduct && (
-        <div className="max-w-6xl sm:max-w-xl md:max-w-6xl mx-auto bg-whi p-8 rounded-lg">
+        <div className="bg-gradient-to-t from-violet-800 to-black max-w-6xl sm:max-w-xl md:max-w-6xl mx-auto bg-whi p-8 rounded-lg">
           <div className="flex flex-col md:flex-row">
             {/* left thumbnail */}
             <div className="hidden md:flex flex-col space-x-4 mr-6 cursor-pointer">
@@ -175,7 +175,7 @@ const ProductDetails = ({ productId }) => {
                       onClick={() => setSelectedColor(color)}
                       className={`w-8 h-8 rounded-full border-2 ${
                         selectedColor === color
-                          ? "border-white"
+                          ? "border-gray-50"
                           : "border-gray-700"
                       }`}
                       style={{
@@ -222,16 +222,16 @@ const ProductDetails = ({ productId }) => {
 
               {/* More details */}
               <div className="mt-10 text-gray-300">
-                <h3 className="text-xl font-bold mb-4">More Details</h3>
+                <h3 className="text-xl font-bold mb-4 text-black">More Details</h3>
                 <table className="w-full text-left text-sm text-gray-500">
                   <tbody>
                     <tr>
-                      <td className="py-1">Brand:</td>
-                      <td className="py-1">{selectedProduct.brand}</td>
+                      <td className="py-1 text-black font-bold">Brand:</td>
+                      <td className="py-1 text-black ">{selectedProduct.brand}</td>
                     </tr>
                     <tr>
-                      <td className="py-1">Type:</td>
-                      <td className="py-1">Controller</td>
+                      <td className="py-1 text-black font-bold">Type:</td>
+                      <td className="py-1 text-black ">Controller</td>
                     </tr>
                   </tbody>
                 </table>
@@ -240,7 +240,7 @@ const ProductDetails = ({ productId }) => {
           </div>
 
           {/* Similar products */}
-          <div className="mt-20">
+          {/* <div className="mt-20">
             <h2 className="text-3xl text-center font-medium mb-4 text-white">
               You may also like
             </h2>
@@ -249,7 +249,7 @@ const ProductDetails = ({ productId }) => {
               loading={loading}
               error={error}
             />
-          </div>
+          </div> */}
         </div>
       )}
     </div>
