@@ -35,7 +35,7 @@ const Navbar = () => {
     <>
       {/* <div className="pt-4 md:block hidden"> <Seachbar /></div> */}
       <nav
-        className="overflow-x-hidden container mx-auto flex items-center justify-around
+        className=" overflow-x-hidden container mx-auto flex items-center justify-around
     md:pt-2 md:pb-3 px-1"
       >
         <div

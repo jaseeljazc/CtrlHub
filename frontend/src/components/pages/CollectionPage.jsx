@@ -76,7 +76,7 @@ const [searchParams] = useSearchParams();
 
       {/* Main Content */}
       <div className="flex-grow p-4">
-        <h2 className="text-2xl uppercase mb-4">All Products</h2>
+        <h2 className="text-2xl uppercase mb-4 text-center text-[#00ff00] mt-5">All Products</h2>
 
         {/* sort option */}
         <SortOption />

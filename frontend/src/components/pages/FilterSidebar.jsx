@@ -8,7 +8,7 @@ const FilterSidebar = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const navigate = useNavigate();
   const [filters, setFilters] = useState({
-    catogory: "",
+    category: "",
     color: "",
     rgb: "",
     brand: [],
@@ -18,7 +18,7 @@ const FilterSidebar = () => {
 
   const [priceRange, setPriceRange] = useState([0, 10000]);
 
-  const catogories = ["Gaming gear", "Gaming Setup"];
+  const categories = ["Gaming Mouse", "Gaming Keyboard"];
   const colors = ["Red", "Blue", "Green", "Yellow", "Gray", "White", "Pink", "Beige", "Black"];
   const rgb = ["No", "Yes"];
   const brands = ["zebronics", "RedGear", "Evofox", "Sony"];
@@ -27,7 +27,7 @@ const FilterSidebar = () => {
     const params = Object.fromEntries([...searchParams]);
 
     setFilters({
-      catogory: params.catogory || "",
+      category: params.category || "",
       color: params.color || "",
       rgb: params.rgb || "",
       brand: params.brand ? params.brand.split(",") : [],
@@ -90,25 +90,25 @@ const FilterSidebar = () => {
         <div className="flex items-center mb-1">
           <input
             type="radio"
-            name="catogory"
+            name="category"
             value="All"
-            checked={filters.catogory === ""}
+            checked={filters.category === ""}
             onChange={handleFilterChange}
             className="mr-2 h-4 w-4 text-blue-200 focus:ring-blue-300 border-gray-500"
           />
           <span className="text-gray-400">All</span>
         </div>
-        {catogories.map((catogory) => (
-          <div key={catogory} className="flex items-center mb-1">
+        {categories.map((category) => (
+          <div key={category} className="flex items-center mb-1">
             <input
               type="radio"
-              name="catogory"
-              value={catogory}
-              checked={filters.catogory === catogory}
+              name="category"
+              value={category}
+              checked={filters.category === category}
               onChange={handleFilterChange}
               className="mr-2 h-4 w-4 text-blue-200 focus:ring-blue-300 border-gray-500"
             />
-            <span className="text-gray-400">{catogory}</span>
+            <span className="text-gray-400">{category}</span>
           </div>
         ))}
       </div>
