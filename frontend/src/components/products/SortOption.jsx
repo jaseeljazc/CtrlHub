@@ -18,7 +18,7 @@ const SortOption = () => {
       className='border bg-black p-2 text-white rounded-lg focus:outline-none'>
         <option value="">Default</option>
         <option value="priceAsc">Price: Low to High</option>
-        <option value="priceDsc">Price: High to Low</option>
+        <option value="priceDesc">Price: High to Low</option>
         <option value="popularity">Popularity</option>
         
       </select>
