@@ -44,9 +44,10 @@ const Navbar = () => {
         >
           <Link
             to="/"
-            className="text-xl md:text-2xl animate-gradient-text font-keyboard font-black "
+            className="text-xl md:text-2xl animate-gradient-tex  font-keyboar rubik-glitch text-[#00ff00]"
           >
-            Ctrlhub
+          {/* <img src={logo} alt="" className="bg-white" /> */}
+          CTRLHub
           </Link>
         </div>
 

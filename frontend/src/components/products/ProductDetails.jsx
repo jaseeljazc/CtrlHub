@@ -112,7 +112,7 @@ const ProductDetails = ({ productId }) => {
 
             {/* main img */}
             <div className="md:w-1/2">
-              <div className="mb-4 border bg-white rounded-lg">
+              <div className="mb-4 border bg-gray-200 rounded-lg">
                 <img
                   src={mainImage || null}
                   alt="main product"
@@ -193,14 +193,14 @@ const ProductDetails = ({ productId }) => {
                 <div className="flex items-center space-x-4 mt-2">
                   <button
                     onClick={() => handleQuantity("minus")}
-                    className="px-2 py-1 rounded-sm text-white bg-black border border-white"
+                    className="px-2 py-1 rounded-sm text-white bg-black border border-black"
                   >
                     -
                   </button>
                   <span className="text-lg text-white">{quantity}</span>
                   <button
                     onClick={() => handleQuantity("plus")}
-                    className="px-2 py-1 rounded-sm text-white bg-black border border-white"
+                    className="px-2 py-1 rounded-sm text-white bg-black border border-black"
                   >
                     +
                   </button>
@@ -209,7 +209,7 @@ const ProductDetails = ({ productId }) => {
 
               {/* Add to cart */}
               <button
-                className={`bg-gray-50 py-2 px-6 hover:bg-transparent hover:border-lime-600 border hover:text-lime-600 rounded w-full mb-4 font-bold transform transition-color ${
+                className={`bg-black text-white border-black py-2 px-6 hover:bg-transparent border-2 hover:border-[#00ff00]  hover:text-[#00ff00] rounded w-full mb-4 font-bold transform transition-color ${
                   isbuttonDisabled
                     ? "cursor-not-allowed opacity-50"
                     : "hover:bg-gray-900"

@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom"
-import gamingGear from "/images/gaminggear.jpeg"
-import gamingSetup from "/images/ledlight.jpeg"
+// 
 
 const Gadgets = () => {
   return (
