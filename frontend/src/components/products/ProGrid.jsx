@@ -11,26 +11,14 @@ const ProGrid = ({ products, loading, error }) => {
     return <p>Error:{error}</p>;
   }
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+<div className="flex flex-wrap justify-center gap-4">
       {products.map((product, index) => {
         console.log("Product image URL:", product?.images?.[0]?.url);
 
         return (
           <Link key={index} to={`/product/${product._id}`} className="block">
-            <div className="bg-gradient-to-tr h-[390px] from-gray-[#b5b5b5] to-[#1b1b1b] p-4 rounded-lg border sm:border-transparent border-transparent border-b-gray-800">
-              {/* Product Image */}
-              {/* <div className="w-full h-56 mb-4">
-          <img
-            src={
-              product?.images?.[0]?.url &&
-              product.images[0].url.trim() !== ""
-                ? `${import.meta.env.VITE_BACKEND_URL}${product.images[0].url}`
-                : "/images/FutureTour.jpeg"
-            }
-            alt={product?.name || "Product"}
-            className="w-full h-full object-contain rounded-lg transform transition-transform duration-300 hover:scale-110"
-          />
-        </div> */}
+            <div className=" w-75 bg-gradient-to-tr h-[390px] from-gray-[#b5b5b5] to-[#1b1b1b] p-4 rounded-lg border sm:border-transparent border-transparent border-b-gray-800">
+         
 
               <div className="w-full h-56 mb-4">
                 <img

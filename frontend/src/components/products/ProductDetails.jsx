@@ -1,6 +1,3 @@
-
-
-
 import { useEffect, useState } from "react";
 import { MdOutlineStarRate } from "react-icons/md";
 import { toast } from "sonner";
@@ -90,7 +87,7 @@ const ProductDetails = ({ productId }) => {
   return (
     <div className="">
       {selectedProduct && (
-        <div className="bg-gradient-to-t from-violet-800 to-black max-w-6xl sm:max-w-xl md:max-w-6xl mx-auto bg-whi p-8 rounded-lg">
+        <div className="mt-15 bg-gradient-to-t from-violet-800 to-black max-w-6xl sm:max-w-xl md:max-w-6xl mx-auto bg-whi p-8 rounded-lg">
           <div className="flex flex-col md:flex-row">
             {/* left thumbnail */}
             <div className="hidden md:flex flex-col space-x-4 mr-6 cursor-pointer">
@@ -222,12 +219,16 @@ const ProductDetails = ({ productId }) => {
 
               {/* More details */}
               <div className="mt-10 text-gray-300">
-                <h3 className="text-xl font-bold mb-4 text-black">More Details</h3>
+                <h3 className="text-xl font-bold mb-4 text-black">
+                  More Details
+                </h3>
                 <table className="w-full text-left text-sm text-gray-500">
                   <tbody>
                     <tr>
                       <td className="py-1 text-black font-bold">Brand:</td>
-                      <td className="py-1 text-black ">{selectedProduct.brand}</td>
+                      <td className="py-1 text-black ">
+                        {selectedProduct.brand}
+                      </td>
                     </tr>
                     <tr>
                       <td className="py-1 text-black font-bold">Type:</td>
@@ -240,18 +241,19 @@ const ProductDetails = ({ productId }) => {
           </div>
 
           {/* Similar products */}
-          {/* <div className="mt-20">
-            <h2 className="text-3xl text-center font-medium mb-4 text-white">
-              You may also like
-            </h2>
-            <ProGrid
-              products={similarProducts}
-              loading={loading}
-              error={error}
-            />
-          </div> */}
         </div>
       )}
+     <div className="mt-20">
+  {similarProducts && similarProducts.length > 0 && (
+    <>
+      <h2 className="text-3xl text-center font-medium mb-4 text-white">
+        You may also like
+      </h2>
+      <ProGrid products={similarProducts} loading={loading} error={error} />
+    </>
+  )}
+</div>
+
     </div>
   );
 };

@@ -21,7 +21,7 @@ const NewItems = () => {
   }, []);
 
   return (
-    <section className=" sm:px-5 md:px-20 my-10 py-5 flex flex-col items-center text-white">
+    <section className=" sm:px-5 md:px-20 my-10 py-5 flex flex-col items-center text-white mx-10 sm:mx-0">
       <div className="container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 ">
         {newArrivals.map((product) => (
           <Link
@@ -29,7 +29,7 @@ const NewItems = () => {
             to={`/product/${product._id}`}
             className="block"
           >
-            <div className="bg-gradient-to-tr from-gray-[#b5b5b5] to-[#1b1b1b]   p-4 rounded-lg border sm:border-gray-900 border-transparent border-b-gray-800">
+            <div className=" h-[390px] min-w-[220px]  bg-gradient-to-tr from-gray-[#b5b5b5] to-[#1b1b1b]   p-4 rounded-lg border sm:border-gray-900 border-transparent border-b-gray-800">
               {/* Product Image */}
               <div className="w-full h-56 mb-4">
                 <img
@@ -51,7 +51,7 @@ const NewItems = () => {
               </div>
 
               {/* Product Info */}
-              <h3 className="text-md mb-2 text-gray-300 truncate-2-lines">
+              <h3 className="text-md mb-2 text-gray-300 hover:text-white truncate-2-lines">
                 {product.name}
               </h3>
               <div className="flex gap-1 items-baseline">
