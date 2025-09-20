@@ -29,7 +29,7 @@ const NewItems = () => {
             to={`/product/${product._id}`}
             className="block"
           >
-            <div className=" h-[390px] min-w-[220px]  bg-gradient-to-tr from-gray-[#b5b5b5] to-[#1b1b1b]   p-4 rounded-lg border sm:border-gray-900 border-transparent border-b-gray-800">
+<div className="h-[420px] bg-gradient-to-bl from-gray-700/30 to-black/50 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl shadow-black/50 p-6 overflow-hidden transition-all duration-300 hover:bg-gradient-to-br hover:from-black hover:via-violet-400/5 hover:to-black/25 hover:border-violet/20 hover:shadow-gray-700/50 hover:-translate-y-2 hover:scale-[1.02]">              {" "}
               {/* Product Image */}
               <div className="w-full h-56 mb-4">
                 <img
@@ -49,7 +49,6 @@ const NewItems = () => {
                   className="w-full h-full object-contain rounded-lg transform transition-transform duration-300 hover:scale-110"
                 />
               </div>
-
               {/* Product Info */}
               <h3 className="text-md mb-2 text-gray-300 hover:text-white truncate-2-lines">
                 {product.name}
@@ -63,7 +62,6 @@ const NewItems = () => {
                   ({product.numReviews})
                 </p>
               </div>
-
               <div className="flex gap-3 items-baseline justify-end">
                 <p className="text-gray-50 font-medium text-lg  tracking-tighter mt-1">
                   ₹{product.discountPrice}
