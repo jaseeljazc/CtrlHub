@@ -62,7 +62,7 @@ useEffect(()=>{
                 </p>
               </div>
               <div className=" ml-auto text-right ">
-                <p className="text-md"> ${item.price}</p>
+                <p className="text-md"> {item.price}</p>
                 <p className="text-sm text-gray-500"> Qty:{item.quantity}</p>
 
               </div>

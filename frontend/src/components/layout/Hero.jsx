@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
-    <section className="relative">
+    <section className="relative ">
       <img
         src={heroImg}
         alt=""
@@ -16,20 +16,20 @@ const Hero = () => {
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/0 to-black/40"></div>
 
       <div
-        className="absolute inset-0 opacity-10"
+        className="absolute inset-0 opacity-10 "
         style={{
           backgroundImage: `linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)`,
           backgroundSize: "50px 50px",
         }}
       ></div>
       <div
-        className="absolute pb-10 inset-0 bg-blac flex items-center
+        className="absolute pb-10 inset-0 mt-15 flex items-center
          justify-center"
       >
-        <div className="text-center text--500 pb-0 lg:pb-30 p-6 ">
+        <div className="text-center  pb-0 lg:pb-10 ">
           {/* <h6 className="md:text-3xl font-bold sm:text-3xl">WELCOME TO </h6> */}
           {/* Clean, Professional Title */}
-          <h1 className=" flex sm:flex-col justify-center mt-15 text-5xl lg:text-8xl xl:text-9xl font-light tracking-tight text-white mb-2 sm:mb-5 leading-none">
+          <h1 className=" flex sm:flex-col justify-center  text-5xl lg:text-8xl xl:text-9xl font-light tracking-tight text-white mb-2 sm:mb-5 leading-none">
             <span className="block font-extralight sm:mt-7 ">CTRL</span>
             <span className="block font-bold bg-gradient-tor text-[#00ff00] from-[#00ff00] to-gray-300 bg-clip-text ">
               HUB

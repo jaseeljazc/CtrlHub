@@ -76,7 +76,7 @@ const MyOrder = () => {
                     {order.orderItems.map((item) => item.name).join(", ")}
                   </td>
                   <td className="py-2 px-2 sm:py-4 font-bold text-gray-400">
-                    ${order.totalPrice}
+                    ₹{order.totalPrice}
                   </td>
                   <td className="py-2 px-2 sm:py-4">
                     {order.isPaid ? (
