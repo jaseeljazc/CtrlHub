@@ -1,135 +1,155 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import { TbBrandMeta } from 'react-icons/tb';
-import { IoLogoInstagram } from 'react-icons/io';
-import { RiTwitterXLine } from 'react-icons/ri';
-import { FiPhoneCall } from 'react-icons/fi';
-
+import React from "react";
+import { Link } from "react-router-dom";
+import { TbBrandMeta } from "react-icons/tb";
+import { IoLogoInstagram } from "react-icons/io";
+import { RiTwitterXLine } from "react-icons/ri";
+import { FiPhoneCall, FiMail, FiMapPin } from "react-icons/fi";
 
 const Footer = () => {
   return (
-    <footer className=' border-b px-10 py-15 ' >
-        <div className='border-t border-white mb-15 '></div>
-        {/* <div className="container mx-auto  grid grid-col-1 md:grid-cols-4 gap-15
-        px-4 lg:px- lg:ml-3 r"> */}
-        <div className="container mx-auto flex sm:justify-evenly flex-col sm:flex-row
-        px-4 lg:px- lg:ml-3 gap-15 sm:gap-0">
-
-
-
-
-
-            {/* <div>
-                <h3 className='text-lg text-gray-200 font-bold mb-4 '>
-                    Newsletter
-
-                </h3>
-                <p className='text-gray-300 mb-4'>Be the first to hear about new products , exclusive events , and online offer
-
-                </p>
-                <p className='font-medium text-sm text-gray-500 mb-6'>
-                    Sign up and get 10% off your first order
-                </p>
-                <form action="" className='flex'>
-                    <input type="email" placeholder='Enter your email'
-                    className='p-3 w-full text-sm placeholder:text-gray-600 border-t border-r border-l border-b border-gray-200
-                    rounded0l-md focus:outline-none focus:ring-2 focus:ring-gray-500 *:
-                    transition-all' />
-                    <button type='submit' className='bg-black text-white px-6 py-3 text-sm
-                    rounded-r-md hover:bg-gray-200 hover:text-black transition-all'>Subscribe</button>
-                </form>
-            </div> */}
-            {/* shop */}
-            <div className='text-center '>
-                <h3 className='text-lg text-gray-200 mb-4 font-bold'>
-                    Shop
-                </h3>
-                <ul className='space-y-2 text-gray-500'>
-                    <li>
-                        <Link to="#" className='hover:text-gray-200 transition-colors'>
-                        Peripherals</Link>
-                    </li>
-                    <li>
-                        <Link to="#" className='hover:text-gray-200 transition-colors'>
-                        Audio</Link>
-                    </li>
-                    <li>
-                        <Link to="#" className='hover:text-gray-200 transition-colors'>
-                        Displays </Link>
-                    </li>
-                    <li>
-                        <Link to="#" className='hover:text-gray-200 transition-colors'>
-                        Aesthetics</Link>
-                    </li>
-                    <li>
-                        <Link to="#" className='hover:text-gray-200 transition-colors'>
-                        Console </Link>
-                    </li>
-
-                </ul>
+    <footer className="bg-gradient-to-b from-gray-900 to-black border-t border-gray-800/50 overflow-hidden">
+      {/* Main Footer Content */}
+      <div className="container mx-auto px-6 lg:px-8 py-16 md:ml-15">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 ">
+          {/* Brand Section */}
+          <div className="lg:col-span-1 text-center">
+            <div className="mb-8">
+              <h2 className="text-3xl font-bold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparet mb-4 text-[#00ff00]">
+                CtrlHub
+              </h2>
+              <p className="text-gray-400 leading-relaxed">
+                Premium gaming peripherals and accessories for the ultimate
+                gaming experience. Quality that speaks for itself.
+              </p>
             </div>
-            {/* support links */}
-             <div className='text-center'>
-                <h3 className='text-lg text-gray-200 mb-4 font-bold'>
-                    Support
-                </h3>
-                <ul className='space-y-2 text-gray-500'>
-                    <li>
-                        <Link to="#" className='hover:text-gray-200 transition-colors'>
-                        Contact Us</Link>
-                    </li>
-                    <li>
-                        <Link to="#" className='hover:text-gray-200 transition-colors'>
-                        About Us</Link>
-                    </li>
-                    <li>
-                        <Link to="#" className='hover:text-gray-200 transition-colors'>
-                        FAQs </Link>
-                    </li>
-                    <li>
-                        <Link to="#" className='hover:text-gray-200 transition-colors'>
-                        Features</Link>
-                    </li>
-                  
 
-                </ul>
+            {/* Contact Info */}
+            <div className="space-y-3 flex flex-col justify-center">
+              <div className="flex items-center space-x-3 text-gray-300 justify-center">
+                <div className="p-2 bg-gray-800/50 rounded-lg">
+                  <FiPhoneCall className="w-4 h-4" />
+                </div>
+                <span className="text-sm">9745752486</span>
+              </div>
+              <div className="flex items-center space-x-3 text-gray-300 justify-center">
+                <div className="p-2 bg-gray-800/50 rounded-lg">
+                  <FiMail className="w-4 h-4" />
+                </div>
+                <span className="text-sm">support@yourstore.com</span>
+              </div>
+              <div className="flex items-center space-x-3 text-gray-300 justify-center">
+                <div className="p-2 bg-gray-800/50 rounded-lg">
+                  <FiMapPin className="w-4 h-4" />
+                </div>
+                <span className="text-sm">Kochi, Kerala, India</span>
+              </div>
             </div>
-         {/* follow us  */}
-         <div className='text-center'>
-            <h3 className='text-lg text-gray-200 mb-4 font-bold'>
-                Follow Us
+          </div>
+
+          {/* Shop Section */}
+          <div className="text-center">
+            <h3 className="text-xl text-[#00ff00] font-bold  mb-6 relative">
+              Shop
             </h3>
-            <div className="flex item-center mb-6 space-x-4 text-white justify-center">
-                <a href="#" target="_blank" rel="noopener noreferrer"
-                className='hover:text-gray-500 '>
-                    <TbBrandMeta className='h-6 w-6 '/>
-                </a>
-                <a href="#" target="_blank" rel="noopener noreferrer"
-                className='hover:text-gray-500'>
-                    <RiTwitterXLine className='h-6 w-6 '/>
-                </a>
-                <a href="#" target="_blank" rel="noopener noreferrer"
-                className='hover:text-gray-500'>
-                    <IoLogoInstagram className='h-6 w-6 '/>
-                </a>
-            </div>
-            <p className='text-gray-300'>
-                Call Us
-            </p>
-            <p className='text-gray-600 '>
-                <FiPhoneCall className='inline-block text-gray-300 mr-2'/>
-                9745752486
-            </p>
-         </div>
-        </div>
-{/* footer bottom */}
-<div className='container mx-auo mt-12 px-4 lg:px-0 border-t 
-border-gray-200 pt-6
-'>
-<p className='text-gray-500 text-sm tracking-tighter  text-center'>2025, All rights Reserved.</p>
-</div>
-    </footer>
-  )
-}
+            <ul className="space-y-4">
+              {[
+                "Peripherals",
+                "Audio",
+                "Displays",
+                "Aesthetics",
+                "Console",
+              ].map((item, index) => (
+                <li key={index}>
+                  <Link
+                    to="#"
+                    className="text-gray-400 hover:text-white transition-all duration-300 hover:translate-x-2 inline-block relative group"
+                  >
+                    <span className="relative z-10">{item}</span>
+                    <div className="absolute inset-0 bg-gray-800/0 group-hover:bg-gray-800/20 rounded-lg transition-all duration-300 -z-0 -m-2"></div>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
 
-export default Footer
+          {/* Support Section */}
+          <div className="text-center">
+            <h3 className="text-xl font-bold  mb-6 relative text-[#00ff00]">
+              Support
+            </h3>
+            <ul className="space-y-4">
+              {[
+                "Contact Us",
+                "About Us",
+                "FAQs",
+                "Features",
+                "Privacy Policy",
+                "Terms of Service",
+              ].map((item, index) => (
+                <li key={index}>
+                  <Link
+                    to="#"
+                    className="text-gray-400 hover:text-white transition-all duration-300 hover:translate-x-2 inline-block relative group"
+                  >
+                    <span className="relative z-10">{item}</span>
+                    <div className="absolute inset-0 bg-gray-800/0 group-hover:bg-gray-800/20 rounded-lg transition-all duration-300 -z-0 -m-2"></div>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Follow Us Section */}
+          <div className="text-center">
+            <h3 className="text-xl font-bold  mb-6 relative text-[#00ff00]">
+              Connect With Us
+            </h3>
+
+            {/* Social Media Icons */}
+            <div className="flex space-x-4 mb-8 justify-center">
+              {[
+                { Icon: TbBrandMeta, href: "#", color: "hover:text-blue-500" },
+                {
+                  Icon: RiTwitterXLine,
+                  href: "#",
+                  color: "hover:text-gray-300",
+                },
+                {
+                  Icon: IoLogoInstagram,
+                  href: "#",
+                  color: "hover:text-pink-500",
+                },
+              ].map(({ Icon, href, color }, index) => (
+                <a
+                  key={index}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`p-3 bg-gray-800/50 rounded-xl border border-gray-700/50 text-gray-400 ${color} transition-all duration-300 hover:scale-110 hover:bg-gray-700/50 hover:border-gray-600/50 hover:shadow-lg group`}
+                >
+                  <Icon className="w-6 h-6" />
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Footer Bottom */}
+      <div className="border-t border-gray-800/50 bg-black/30 backdrop-blur-sm">
+        <div className="container mx-auto px-6 lg:px-8 py-8">
+          <div className="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0">
+            {/* Copyright */}
+            <div className="text-center md:text-left">
+              <p className="text-gray-500 text-sm">
+                © 2025 Your Store. All rights reserved.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
