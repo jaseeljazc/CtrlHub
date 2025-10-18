@@ -43,7 +43,7 @@ const AdminHomePage = () => {
          hover:border-black transition duration-300"
         >
           <h2 className=" text-xl font-semibold ">Revenue</h2>
-          <p className=" text-2xl text-lime-500">${totalSales.toFixed(2)}</p>
+          <p className=" text-2xl text-lime-500">₹{totalSales.toFixed(2)}</p>
         </div>
         <div className="p-4 shadow-md border-[#16F467] border rounded-lg hover:-translate-y-1 hover:shadow-[0_5px_10px_black] hover:border-black transition duration-300">
           <h2 className=" text-xl font-semibold ">Total Orders</h2>

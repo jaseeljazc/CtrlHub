@@ -26,7 +26,7 @@ const Hero = () => {
         className="absolute pb-10 inset-0 mt-15 flex items-center
          justify-center"
       >
-        <div className="text-center  pb-0 lg:pb-10 ">
+        <div className="text-center  pb-0 lg:pb-10 mt-5 ">
           {/* <h6 className="md:text-3xl font-bold sm:text-3xl">WELCOME TO </h6> */}
           {/* Clean, Professional Title */}
           <h1 className=" flex sm:flex-col justify-center  text-5xl lg:text-8xl xl:text-9xl font-light tracking-tight text-white mb-2 sm:mb-5 leading-none">
@@ -38,7 +38,7 @@ const Hero = () => {
 
           <div className="mb-12 space-y-4">
             <h2 className="text-xl lg:text-3xl text-gray-300 font-light leading-relaxed">
-              Elevate Your Gaming Experience with
+              Elevate Your Gaming Experience
             </h2>
 
             <p className="text-md text-center text-gray-400 max-w-2xl leading-relaxed mb-12 font-light">

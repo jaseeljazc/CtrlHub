@@ -204,6 +204,7 @@ const About = () => {
           <h2 className="text-4xl md:text-5xl font-bold text-black mb-6">
             Ready to Dominate?
           </h2>
+          
           <p className="text-xl text-black mb-8 opacity-90">
             Join thousands of gamers who've already upgraded their setup with
             our premium accessories.
@@ -222,6 +223,10 @@ const About = () => {
           </div>
         </div>
       </section>
+
+      <br />
+          <br /><br /><br /><br /><br />
+          <br /><br /><br /><br />
     </div>
   );
 };
